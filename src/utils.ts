@@ -94,7 +94,11 @@ const Utils = {
 
       if ( !workspaceFolders ) return;
 
-      const firstRootPath = workspaceFolders[0].uri.fsPath;
+      const firstFolder = workspaceFolders[0]
+
+      if ( !firstFolder ) return;
+
+      const firstRootPath = firstFolder.uri.fsPath;
 
       if ( !basePath || !absolute ( basePath ) ) return firstRootPath;
 
